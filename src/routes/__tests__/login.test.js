@@ -17,4 +17,13 @@ describe("Login Routes Tests", () => {
             result: { error: "Invalid credentials" },
         });
     });
+
+    it("should respond with body error as validate credentials has failed", async () => {
+        const response = await request(app).get(
+            "/validate?username=adm&&password=adm"
+        );
+        expect(response.body).toEqual({
+            result: { error: "Username should be at least 4 characters." },
+        });
+    });
 });
