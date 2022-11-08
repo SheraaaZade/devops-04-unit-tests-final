@@ -2,8 +2,8 @@ module.exports = function (username, password) {
     if (
         !username ||
         !password ||
-        username.trim() === 0 ||
-        password.trim() === 0
+        username.trim().length === 0 ||
+        password.trim().length === 0
     ) {
         return { error: "Credentials are mandatory" };
     }
@@ -12,7 +12,7 @@ module.exports = function (username, password) {
         return { error: "Username should be at least 4 characters." };
     }
 
-    if (username.length > 100) {
+    if (username.length > 20) {
         return { error: "Username is too long." };
     }
 
@@ -20,7 +20,7 @@ module.exports = function (username, password) {
         return { error: "Password should be at least 4 characters." };
     }
 
-    if (password.length > 100) {
+    if (password.length > 20) {
         return { error: "Password is too long." };
     }
 
