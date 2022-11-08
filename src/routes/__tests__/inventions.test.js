@@ -14,10 +14,7 @@ const inventionsMock = [
 ];
 
 jest.mock("../../models/Invention", () => ({
-    list: jest
-        .fn()
-        .mockReturnValueOnce([])
-        .mockReturnValueOnce(inventionsMock)
+    list: jest.fn().mockReturnValueOnce([]).mockReturnValueOnce(inventionsMock),
 }));
 
 const app = require("../../app");

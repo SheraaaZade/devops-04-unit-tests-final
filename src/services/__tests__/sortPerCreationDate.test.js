@@ -34,21 +34,4 @@ describe("sortPerCreationDate Tests", () => {
         var result = sortPerCreationDate(items, "asc");
         expect(result).toEqual(items);
     });
-
-    // it("should succeed and get the same array", () => {
-    // 	var result = sortPerCreationDate(items, "key");
-    // 	expect(result).toEqual(items);
-    // });
-
-    // it("should succeed and get the updated array", () => {
-    // 	var result = sortPerCreationDate(items, "title");
-    // 	expect(result).toEqual([
-    // 		{
-    // 			title: 'TEST'
-    // 		},
-    // 		{
-    // 			title: 'TESTNUMBERTWO'
-    // 		}
-    // 	]);
-    // });
 });
