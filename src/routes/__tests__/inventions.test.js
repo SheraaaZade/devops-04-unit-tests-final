@@ -18,7 +18,6 @@ jest.mock("../../models/Invention", () => ({
         .fn()
         .mockReturnValueOnce([])
         .mockReturnValueOnce(inventionsMock)
-        .mockReturnValueOnce(inventionsMock),
 }));
 
 const app = require("../../app");
@@ -38,7 +37,6 @@ describe("inventions Routes Tests", () => {
 
     it("should return inventions sorted asc", async () => {
         const response = await request(app).get("/inventions/sort/desc");
-        console.log("ASC", response.body.inventions);
 
         expect(response.body.inventions).toEqual(inventionsMock);
     });
