@@ -21,7 +21,7 @@ describe ('keyToUpperCase tests', () =>{
 
     it("should succeed and get the same array", () => {
         var result = keyToUpperCase(items, "key");
-        expect(result.toEqual(items));
+        expect(result).toEqual(items);
     });
 
     it("should succeed and get the updated array", () => {
