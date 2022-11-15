@@ -13,18 +13,21 @@ const inventionsMock = [
     },
 ];
 
-jest.mock("../../models/Invention", () => ({
-    list: jest.fn().mockReturnValueOnce([]).mockReturnValueOnce(inventionsMock),
+jest.mock('../../models/Invention', () => ({
+    list: jest
+    .fn()
+    .mockReturnValueOnce([])
+    .mockReturnValueOnce(inventionsMock),
 }));
 
-const app = require("../../app");
-const request = require("supertest");
+const app = require('../../app');
+const request = require('supertest');
 
-describe("inventions Routes Tests", () => {
+describe('inventions routes tests', () => {
     it("should return inventions", async () => {
-        const response = await request(app).get("/inventions");
+        const response = await request(app).get('/inventions');
         expect(response.body).toEqual({
-            inventions: [],
+            inventions: [],  //<<< tableau vide
             sources: [
                 "https://www.thoughtco.com/20th-century-timeline-1992486",
                 "https://en.wikipedia.org/wiki",
@@ -32,9 +35,8 @@ describe("inventions Routes Tests", () => {
         });
     });
 
-    it("should return inventions sorted asc", async () => {
-        const response = await request(app).get("/inventions/sort/desc");
-
-        expect(response.body.inventions).toEqual(inventionsMock);
+    it("should return inventions sorted desc", async () => {
+        const response = await request(app).get('/inventions/sort/desc');
+        expect(response.body.inventions).toEqual(inventionsMock); // << tableau rempli ; l'ordre des test a de l'importance
     });
 });

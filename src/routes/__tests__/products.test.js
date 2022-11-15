@@ -8,9 +8,9 @@ const { Response } = jest.requireActual("node-fetch");
 describe("Products Routes Tests", () => {
     const products = [{ id: 1 }, { id: 2 }, { id: 3 }];
 
-    beforeEach(() => {
-        jest.clearAllMocks();
-    });
+   beforeEach(() => {
+    jest.clearAllMocks();
+   });
 
     it("should respond with body products", async () => {
         fetch.mockResolvedValueOnce(

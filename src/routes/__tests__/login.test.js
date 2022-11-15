@@ -6,7 +6,7 @@ describe("Login Routes tests", ()=>{
         const response = await request(app).get(
             "/login?username=admin&&password=admin"
         );
-        expect(response.body).toEqual({ result: "Success !!"});
+        expect(response.body).toEqual({ result: "Success !!!"});
     });
 });
 
