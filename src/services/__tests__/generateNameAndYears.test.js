@@ -1,7 +1,7 @@
 const generateNameAndYears = require("../generateNameAndYears");
 
 describe("Generate Name and Years Tests", () => {
-    it("should failed as no name is provided", () => {
+    it("should failed as no name is provided", () =>{
         var result = generateNameAndYears();
         expect(result).toEqual(`${undefined} (${undefined} years old)`);
     });

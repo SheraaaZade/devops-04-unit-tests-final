@@ -1,6 +1,6 @@
 const keyToUpperCase = require("../keyToUpperCase");
 
-describe("KeyToUpperCase Tests", () => {
+describe ('keyToUpperCase tests', () =>{
     const items = [
         {
             title: "test",
@@ -9,20 +9,19 @@ describe("KeyToUpperCase Tests", () => {
             title: "testNumberTwo",
         },
     ];
-
-    it("should failed as items and key are not provided", () => {
+    it('should failed as items and key are not provided', () =>{
         var result = keyToUpperCase();
         expect(result).toEqual(undefined);
     });
 
-    it("should failed as key is not provided", () => {
+    it("should failed as key is not provided", () =>{
         var result = keyToUpperCase(items);
         expect(result).toEqual(undefined);
     });
 
     it("should succeed and get the same array", () => {
         var result = keyToUpperCase(items, "key");
-        expect(result).toEqual(items);
+        expect(result.toEqual(items));
     });
 
     it("should succeed and get the updated array", () => {
